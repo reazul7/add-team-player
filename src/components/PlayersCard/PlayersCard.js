@@ -11,7 +11,7 @@ const PlayersCard = (props) => {
     // console.log(props);
     const handleAddPlayer = props.handleAddPlayer;
     return (
-        <Col sm={4} xs={6}>
+        <Col sm={4}>
             <Card>
                 <Card.Img variant="top" className="img-fluid" height='500px' src={image}  />
                 <Card.Body>
