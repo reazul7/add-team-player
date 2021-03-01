@@ -1,23 +1,44 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import AddPlayer from './components/AddPlayer/AddPlayer';
+import playersData from './components/Data/Data.json';
+import PlayersCard from './components/PlayersCard/PlayersCard';
+import { Row } from 'react-bootstrap';
 
 function App() {
+  const [players, setPlayers] = useState([]);
+  const [addPlayer, setAddPlayers] = useState([]);
+  
+
+	// useEffect(() => setPlayers(playersData));
+	useEffect(() => {
+    // const [players, setPlayers] = useState([]);
+    setPlayers(playersData)
+  }, []);
+  // console.log(playersData);
+
+  //for handler
+  const handleAddPlayer = (playersData) => {
+    // const newAddPlayer = [...addPlayer, players]
+    const newAddPlayer = [...addPlayer, playersData]
+    setAddPlayers(newAddPlayer);
+    // console.log('add player', playersData)
+    // console.log(playersData);
+
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Players Loaded: {playersData.length}</h1>
+      <h3>Player Added: {addPlayer.length}</h3>
+      <AddPlayer addPlayer={addPlayer}></AddPlayer>
+      <Row>
+      {
+          players.map(player => <PlayersCard player={player} key={player.id} handleAddPlayer={handleAddPlayer}></PlayersCard>)
+        }
+      </Row>
+
+        
+
     </div>
   );
 }

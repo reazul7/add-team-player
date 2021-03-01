@@ -1,0 +1,9 @@
+#images{
+    /* width:400px; */
+    height:500px auto;
+}
+.card-deck{
+    width: 800px;
+    padding: 10px;
+    padding-left: 100px;
+}
