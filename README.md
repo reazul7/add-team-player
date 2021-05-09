@@ -1,7 +1,7 @@
 
 <h2 align="center">
   Make Your Team<br/>
-  <a href="Live Site: https://romantic-benz-72afd7.netlify.app/" target="_blank">Live Website</a>
+  <a href="https://romantic-benz-72afd7.netlify.app/" target="_blank">Live Website</a>
 </h2>
 <div align="center">
   <img alt="Demo" src="./Images/readme-img1.png" />
